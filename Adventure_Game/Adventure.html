@@ -10,31 +10,50 @@
         <p>Made by: Joe Hewett</p>
         <script>
             
+            Start();
             
-            alert("Rengar: 'Food ready'");
-            confirm("Are you going to eat?");
             
-            var likefood = prompt("Did you like the food?");
-            
-            if(likefood == "Yes"){
-                 alert("thank you");
-            }
-            else{
-                alert("You suck");
+            function Start(){
+                
+                var playerName = prompt("What is your name traveller?");
+                
+                alert("Welcome to the land of Lyrian, " + playerName);
+                
+                var startGame = confirm("Are you ready to begin your adventure?");
+                    
+                if(startGame){
+                    Village();
+                    
                 }
-            
-            
-           var favColor = prompt("What is your favorite color?").toLowerCase();
-            
-            if(favColor == "blue"){
-                alert("Noob");
+                else{
+                    alert("Be gone with you then!");
+                }
+                
+                function Village(){
+                    var vilage = prompt("You arrive at a small village. There is a blacksmith, inn, stable and several wooden homes").toLowerCase();
+                    
+                    switch(village){
+                        case "blacksmith":
+                            alert("The blacksmith scowls at you and mumbles somthing rude! You walk away intimidated.");
+                            break;
+                        case "inn":
+                            alert("You enter the weather torn in. You are greeted by a large friendly man. He asks what can I do for yah?");
+                            break;
+                        case "stable":
+                            alert("The stable master informs you that all of the horses were stolen last night. He asks you for your help?");
+                            break;
+                        default:
+                            alert("I do not understand" + village);
+                            break;
+                                  
+                                  
+                                  
+                                  }
+                    
+                    
+                }
             }
-            else if(favColor == "green"){
-                alert("Amazing");
-            }
-            else{
-                alert("That's not a Color you Idiot!!!");
-            }
+            
         </script>
     
     </body>
