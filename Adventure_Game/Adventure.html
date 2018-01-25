@@ -20,7 +20,9 @@
                 alert("Welcome to the land of Lyrian, " + playerName);
                 
                 var startGame = confirm("Are you ready to begin your adventure?");
-                    
+                
+              
+               
                 if(startGame){
                     Village();
                     
@@ -30,22 +32,41 @@
                 }
                 
                 function Village(){
-                    var vilage = prompt("You arrive at a small village. There is a blacksmith, inn, stable and several wooden homes").toLowerCase();
+                    var village = prompt("You arrive at a small village. As you look around you see a blacksmith, inn, stable and several small wooden homes").toLowerCase();
                     
                     switch(village){
                         case "blacksmith":
                             alert("The blacksmith scowls at you and mumbles somthing rude! You walk away intimidated.");
+                            Village();
                             break;
                         case "inn":
-                            alert("You enter the weather torn in. You are greeted by a large friendly man. He asks what can I do for yah?");
+                            alert("You enter the weather torn inn. You are greeted by a large friendly man. He asks what can I do for yah?");
+                            Village();
                             break;
                         case "stable":
-                            alert("The stable master informs you that all of the horses were stolen last night. He asks you for your help?");
+                            alert("The stable master informs you that all of the horses were stolen last night.");
+                            var stable = confirm("Will you help me find them?")
+                                
+                               if(stable){
+                                   alert("Great, All I know is last night when I came to the stable to feed the horses. I saw a band of small hooded figures who where riding away with them.");
+                                
+                                         }
+                                else{
+                                    alert("Fine then, don't expect any favors from me.");
+                                }
+                            Village();
                             break;
+                        case "exit":
+                            alert("Run away, Chicken! The End");
+                            break;
+            
                         default:
-                            alert("I do not understand" + village);
+                            alert("I do not understand." + village);
+                            Village();
                             break;
-                                  
+                
+                    
+                            
                                   
                                   
                                   }
