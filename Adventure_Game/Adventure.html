@@ -17,23 +17,57 @@
                 silvercoins:0,
                 coppercoins:0,
                 
-            /*  function Begger(){
+           
+                
+                
+                
+            }
+                    function Begger(){
                     var begger = alert("While leaving the blacksmith you notice a blindman leaning against the wall playing a lute.");{
+                    
                         
-                        alert("The man hears you passing by and askes you to come over");
-                        prompt("BlindMan: What is your name Traveler?");  
-            }
-                
-                */
-                
-            }
+                        alert("The man hears you passing by and askes you to come over.");
+                        alert("You Approach the haggard man and notice he is a street musicain with a cup with some silvercoins inside")
+                        prompt("BlindMan: What is your name Traveler?");
+                        var song = confirm("BlindMan: Would you like hear song?");
+                        
+                            if(song){
+                                alert("The BlindMan begins to play a beatiful melody and sing in a language you do not know.");
+                                alert("While he is playing a thought occurs you to that you could just steal the silver in his cup and the man and would be none the wiser");
+                                var rob = prompt("Would you like to continue listening or rob the man?").toLowerCase;
+                                
+                                switch(rob){
+                                    case "continue":
+                                     alert("You continue listening to the enchanting tune");
+                                            
+                                     break;
+                                        
+                                    case "rob":
+                                        alert("You monster");
+                                        alert("You quietly dump the coins from the BlindMans cup and slink away");
+                                        Village();
+                                        break;
+                                        
+                                    }
+                                
+                                           
+                                else{
+                                    alert("The man ....");
+                                    Village();
+                                    }
+                        
+                    }
+                                
+                            
+                        }
+                    
             Start();
             
             
             function Start(){
                 
                 var playerName = prompt("What is your name traveller?");
-                ßd
+                
                 alert("Welcome to the land of Lyrian, " + playerName);
                 
                 var startGame = confirm("Are you ready to begin your adventure?");
@@ -96,7 +130,7 @@
                     
                                 }       
                 
-                    }// Story get coins from begger by stealing or listineng to him play give coins to inn keeper for info for the horse robbers
+                    }      
             
                 
             
