@@ -14,7 +14,7 @@
                 sword:0, 
                 bread:0,
                 goldcoins:0,
-                silvercoins:0,
+                silvercoins:10,
                 coppercoins:0,
                 
            
@@ -38,29 +38,31 @@
                                 
                                 switch(rob){
                                     case "continue":
-                                     alert("You continue listening to the enchanting tune");
-                                            
+                                     alert("You continue listening to the enchanting tune");       
                                      break;
                                         
                                     case "rob":
                                         alert("You monster");
-                                        alert("You quietly dump the coins from the BlindMans cup and slink away");
+                                        alert("You quietly dump the coins from the BlindMans cup into your leather pouch and slink away");
                                         Village();
                                         break;
                                         
+                                    default:
+                                        Village();
+                                        
                                     }
                                 
-                                           
+                            }
                                 else{
                                     alert("The man ....");
                                     Village();
                                     }
                         
-                    }
+                    
                                 
                             
                         }
-                    
+                    }
             Start();
             
             
@@ -84,14 +86,34 @@
                 
                 function Village(){
                     var village = prompt("You arrive at a small village. As you look around you see a blacksmith, inn, stable and several small wooden homes").toLowerCase();
-                    /*var begger = alert("While leaving the blacksmith you notice a blindman leaning against the wall playing a lute.");{
-                        
-                        alert("The man hears you passing by and askes you to come over");
-                        prompt("BlindMan: What is your name Traveler?");
-                    }*/
+                    
                     switch(village){
                         case "blacksmith":
                             alert("The blacksmith scowls at you and mumbles somthing rude! You walk away intimidated.");
+                            
+                            var blacksmith = prompt("what do you want to buy? \n - sword \n - shield \n - armor");
+                                if(blacksmith == "sword" || blacksmith == "buy sword" &&
+                                   inventory.silvercoins >= 10){
+                                    //adds sword
+                                    inventory.sword ++;
+                                    //displays swords owned
+                                    
+                                   alert("You own " +inventory.sword+" swords");
+                                    //pay money
+                                    inventory.silvercoins = inventory.silvercoins - 10;
+                                    //displays account
+                                    alert("You have "+inventory.silvercoins+" silver coins remaining");
+                                    }
+                                    //fix next time
+                            
+                                    /*else if{
+                                        (inventory.silvercoins <= 9);
+                                        alert("You can't afford that");
+                                    }*/
+                                    
+                                
+                            
+                            
                             Begger();
                             Village();
                             break;
