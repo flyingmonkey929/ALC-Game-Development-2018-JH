@@ -28,34 +28,39 @@
                     
                         
                         alert("The man hears you passing by and askes you to come over.");
-                        alert("You Approach the haggard man and notice he is a street musicain with a cup with some silvercoins inside");
-                        prompt("BlindMan: What is your name Traveler?");
-                        var song = confirm("BlindMan: Would you like hear song?");
+                        alert("You Approach the haggard man and notice he is a street musicain with a cup with some silver coins inside.");
+                        var fakeName = prompt("BlindMan: What is your name Traveler?");
+                        var song = confirm("BlindMan: Well, " + fakeName + " would you like to hear a song?");
                         
                             if(song){
-                                alert("The BlindMan begins to play a beatiful melody and sing in a language you do not know.");
+                                alert("The BlindMan begins to play a beautiful melody and sing in a language you do not know.");
                                 alert("While he is playing a thought occurs you to that you could just steal the silver in his cup and the man and would be none the wiser");
                                 var rob = confirm("Would you like to rob the man?");
                                 
                                 if(rob){
-                                 alert("You monster");
-                                 alert("You quietly dump the coins from the BlindMans cup into your leather pouch and slink away");
+                                 alert("You monster.");
+                                 alert("You quietly dump the coins from the BlindMans cup into your leather pouch and slink away.");
+                                 alert("You have aquired 5 stolen silver coins");
+                                 inventory.silvercoins = inventory.silvercoins + 5;
                                      
                                 }
                                     else{                
-                                        alert("You continue listening to the enchanting tune");
+                                        alert("You continue listening to the enchanting tune.");
+                                        alert("BlindMan: You are quite the character " + fakeName +" It's not often someone stops to humor me.");
+                                        alert("BlindMan: Most would just steal my coins and walk away. Haha Lucky for you... you didn't.");
+                                        alert("Before you could I reply the BlindMan simply disappeared leaving behind his silver coins.");
+                                        alert("You have aquired 10 silver coins");
+                                        inventory.silvercoins = inventory.silvercoins + 10;
                                         
                                     }
                                         
-                                       /* default:
-                                        Village();
-                                        break;*/
+                                       
                                         
                                     
                                 
                             }
                                 else{
-                                    alert("The man ....");
+                                    alert("BlindMan: Stop wasting my time then.");
                                     }
                         
                     
@@ -135,7 +140,7 @@
                             break;
             
                         default:
-                            alert("I do not understand." + village);
+                            alert("I do not understand. " + village);
                             Village();
                             break; 
                                   }
