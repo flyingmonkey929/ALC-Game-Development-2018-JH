@@ -9,6 +9,18 @@
         <h2>Yeeet!!!</h2>
         <p>Made by: Joe Hewett</p>
         <script>
+            var IsBegger = true;
+            
+            var invList = function(){
+                alert("Sword = "+ inventory.sword +
+                     "\nBread = "+ inventory.bread +
+                      "\nGold coins = "+ inventory.goldcoins +
+                      "\nSilver coins = "+ inventory.silvercoins +
+                     "\nCopper coins = "+ inventory.coppercoins);
+            }
+            
+            
+            
             //Inventory System
             var inventory ={
                 sword:0, 
@@ -22,52 +34,7 @@
                 
                 
             }       
-                    function Begger(){
-                    var begger = alert("While leaving the blacksmith you notice a blindman leaning against the wall playing a lute.");
-                        
                     
-                        
-                        alert("The man hears you passing by and askes you to come over.");
-                        alert("You Approach the haggard man and notice he is a street musicain with a cup with some silver coins inside.");
-                        var fakeName = prompt("BlindMan: What is your name Traveler?");
-                        var song = confirm("BlindMan: Well, " + fakeName + " would you like to hear a song?");
-                        
-                            if(song){
-                                alert("The BlindMan begins to play a beautiful melody and sing in a language you do not know.");
-                                alert("While he is playing a thought occurs you to that you could just steal the silver in his cup and the man and would be none the wiser");
-                                var rob = confirm("Would you like to rob the man?");
-                                
-                                if(rob){
-                                 alert("You monster.");
-                                 alert("You quietly dump the coins from the BlindMans cup into your leather pouch and slink away.");
-                                 alert("You have aquired 5 stolen silver coins");
-                                 inventory.silvercoins = inventory.silvercoins + 5;
-                                     
-                                }
-                                    else{                
-                                        alert("You continue listening to the enchanting tune.");
-                                        alert("BlindMan: You are quite the character " + fakeName +" It's not often someone stops to humor me.");
-                                        alert("BlindMan: Most would just steal my coins and walk away. Haha Lucky for you... you didn't.");
-                                        alert("Before you could I reply the BlindMan simply disappeared leaving behind his silver coins.");
-                                        alert("You have aquired 10 silver coins");
-                                        inventory.silvercoins = inventory.silvercoins + 10;
-                                        
-                                    }
-                                        
-                                       
-                                        
-                                    
-                                
-                            }
-                                else{
-                                    alert("BlindMan: Stop wasting my time then.");
-                                    }
-                        
-                    
-                        
-                            
-                        
-                    }
             Start();
             
             
@@ -115,11 +82,16 @@
                                         (inventory.silvercoins <= 9);
                                         alert("You can't afford that");
                                     }*/
-                            Begger();
+                            if(IsBegger == true) {
+                                Begger();
+                            }
+                            else{
                             Village();
+                            }
                             break;
                         case "inn":
-                            alert("You enter the weather torn inn. You are greeted by a large friendly man. He asks what can I do for yah?");
+                            alert("You enter the weather torn inn. You are greeted by a large bearded man.");
+                            alert("InnKeeper: What can I do for yah?")
                             Village();
                             break;
                         case "stable":
@@ -128,6 +100,8 @@
                                 
                                if(stable){
                                    alert("Great, All I know is last night when I came to the stable to feed the horses. I saw a band of small hooded figures who where riding away with them.");
+                                   alert("You might want to check with the Innkeeper. Word has is he has eyes and ears all over the town. If you know what I mean.");
+                                   alert("Just tell him Henry sent you he will tell you anything for the right price.")
                                 
                                          }
                                 else{
@@ -138,8 +112,11 @@
                         case "exit":
                             alert("Run away, Chicken! The End");
                             break;
-            
-                        default:
+                        case "inventory":
+                            invList();
+                            Village();
+                            break;
+                            default:
                             alert("I do not understand. " + village);
                             Village();
                             break; 
@@ -147,8 +124,62 @@
                     
                     
                                 }       
+                function Begger(){
+                    var begger = alert("While leaving the blacksmith you notice a blindman leaning against the wall playing a lute.");
+                        
+                    
+                        
+                        alert("The man hears you passing by and askes you to come over.");
+                        alert("You Approach the haggard man and notice he is a street musicain with a cup with some silver coins inside.");
+                        var fakeName = prompt("BlindMan: What is your name Traveler?");
+                        var song = confirm("BlindMan: Well, " + fakeName + " would you like to hear a song?");
+                        
+                            if(song){
+                                alert("The BlindMan begins to play a beautiful melody and sing in a language you do not know.");
+                                alert("While he is playing a thought occurs you to that you could just steal the silver in his cup and the man and would be none the wiser");
+                                var rob = confirm("Would you like to rob the man?");
+                                
+                                if(rob){
+                                 alert("You monster.");
+                                 alert("You quietly dump the coins from the BlindMans cup into your leather pouch and slink away.");
+                                 alert("You have aquired 5 stolen silver coins");
+                                 inventory.silvercoins = inventory.silvercoins + 5;
+                                 var IsBeggar = false;
+                                 Village();
+                                     
+                                }
+                                    else{                
+                                        alert("You continue listening to the enchanting tune.");
+                                        alert("BlindMan: You are quite the character " + fakeName +" It's not often someone stops to humor me.");
+                                        alert("BlindMan: Most would just steal my coins and walk away. Haha Lucky for you... you didn't.");
+                                        alert("Before you could I reply the BlindMan simply disappeared leaving behind his silver coins.");
+                                        alert("You have aquired 10 silver coins");
+                                        inventory.silvercoins = inventory.silvercoins + 10;
+                                        var IsBeggar = false;
+                                        Village();
+                                        
+                                        
+                                    }
+                                        
+                                       
+                                        
+                                    
+                                
+                            }
+                                else{
+                                    alert("BlindMan: Stop wasting my time then.");
+                                    var IsBeggar = false;
+                                    Village();
+                                    }
+                        
+                    
+                        
+                            
+                        
+                    }
                 
-                    }      
+                    } 
+            
             
                 
             
