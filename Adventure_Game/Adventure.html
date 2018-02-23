@@ -26,7 +26,7 @@
                 sword:0, 
                 bread:0,
                 goldcoins:0,
-                silvercoins:10,
+                silvercoins:0,
                 coppercoins:0,
                 
            
@@ -92,7 +92,24 @@
                         case "inn":
                             alert("You enter the weather torn inn. You are greeted by a large bearded man.");
                             alert("InnKeeper: What can I do for yah?")
-                            Village();
+                            var info = confirm("Got any money, I have some juicy secrets");
+                                if(info){
+                                    if(inventory.silvercoins >= 5){
+                                        inventory.silvercoins = inventory.silvercoins - 5;
+                                    alert("The horses were stolen by the Gnomes of the west mountain");
+                                    alert("Great Job you solved the mystery Join Us Next time in chapter 2 The Hunt.");
+                                    alert("The End \n Created By: Joe Hewett.");
+                                    }
+                                    else{
+                                        alert("Come by later then.");
+                                        Village();
+                                    }
+                                }
+                            else{
+                                alert("Good Bye.");
+                                Village();
+                            }
+                            
                             break;
                         case "stable":
                             alert("The stable master informs you that all of the horses were stolen last night.");
