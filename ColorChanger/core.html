@@ -2,21 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport"
-content = "width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet"
-type="text/css"
-href="ColorChanger.css"/>
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="ColorChanger.css"/>
     <title>Color Changer</title>
  </head>
 <body>
-    <button id="change"
-class="btn">Change Color</button>
+    <button id="change" class="btn">Change Color</button>
     <div class="mdls">
      <div class="modal" id="modal">
       <div class="main">
        <div class="left">
-        <div class="filler">
+           <div class="filler"></div>
          <div id ="row1">
          <label>
          <input type ="radio" name="colors" onclick="Preview()" value="#F44336"/>
@@ -59,7 +55,7 @@ class="btn">Change Color</button>
                  
                  <label>
              <input type="radio" name="colors" onclick="Preview()" value="#FFFFFF"/>
-             <div class="box white500"></div>
+             <div class="box white"></div>
              </label>
                  
                  <label>
@@ -72,7 +68,9 @@ class="btn">Change Color</button>
             
             <div class="center">
             <div class="filler"></div>
-            <div class="previews"></div>
+            <div class="previews">
+                <div id="preview"></div>
+                
             </div>
             <div class="filler"></div>
          </div>
@@ -85,8 +83,9 @@ class="btn">Change Color</button>
                </div> 
                 <div class="filler"></div>
                </div>
-           </div>
+           
         </div>
+    </div>
     </div>
     </div>
     </body>
