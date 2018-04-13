@@ -92,6 +92,7 @@
             drawBall();
             drawPaddle();
             drawScore();
+            drawLives();
             collisionDetection();
             x += dx;
             y += dy;
@@ -107,8 +108,20 @@
                    dy = -dy;
                    }
                    else{
-                alert("GAME OVER");
-                document.location.reload();
+                lives--;
+                       if(!lives){
+                           alert("GAME OVER");
+                           document.location.reload();
+                           
+                       }
+                       else{
+                           x = canvas.width/2;
+                           y = canvas.height-30;
+                           dx = 2;
+                           dy = -2;
+                           paddleX = (canvas.width-paddleWidth)/2;
+                       }
+                       
             }
         }
           
@@ -118,12 +131,15 @@
             else if(leftPressed && paddleX > 0){
                 paddleX -= 7;
             }
-           
+          requestAnimationFrame(draw); 
         }
+        
+        draw();
+        
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
-        document.addEventListener("mousemove" mouseMoveHandler, false);
-        setInterval(draw, 10);
+        document.addEventListener("mousemove", mouseMoveHandler, false);
+        
         
         function mouseMoveHandler(e){
             var relativeX = e.clientX - canvas.offsetLeft;
@@ -162,7 +178,7 @@
         
         function drawScore(){
             ctx.font = "16px Arial";
-            ctx.fillStyle  "#0095DD";
+            ctx.fillStyle = "#0095DD";
             ctx.fillText("Score: "+score, 8, 20);
         }
         
